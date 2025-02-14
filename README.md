@@ -56,8 +56,7 @@ This project is designed with a **controller-service-repository structure** in *
 
 ## 📂 Database Schema Overview
 
-![System Diagram](https://github.com/user-attachments/assets/003d0c89-118c-4819-a85a-f8ac7d9a912e)
-
+![Screenshot 2025-02-14 131934](https://github.com/user-attachments/assets/c3e119eb-333c-4db1-95db-a0135d969ed1)
 
 | Table Name         | Description |
 |--------------------|------------|

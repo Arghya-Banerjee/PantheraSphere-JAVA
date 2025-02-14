@@ -56,6 +56,9 @@ This project is designed with a **controller-service-repository structure** in *
 
 ## 📂 Database Schema Overview
 
+![System Diagram](https://github.com/user-attachments/assets/003d0c89-118c-4819-a85a-f8ac7d9a912e)
+
+
 | Table Name         | Description |
 |--------------------|------------|
 | **UserMaster**     | Stores user data (ID, name, email, role, etc.). |

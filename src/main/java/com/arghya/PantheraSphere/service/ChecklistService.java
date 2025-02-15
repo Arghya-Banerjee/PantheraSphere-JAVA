@@ -45,4 +45,16 @@ public class ChecklistService {
     public void updateChecklist(int OpMode, Long ChecklistID, Long ForestID, Long CreatedBy, Date SafariDate, Time StartTime, Long GuideID, Long DriverID){
         checklistRepository.updateChecklist(OpMode, ChecklistID, ForestID, CreatedBy, SafariDate, StartTime, GuideID, DriverID);
     }
+
+    public List<GetChecklistDto> getChecklistByForestId(int OpMode, Long ForestID){
+        return checklistRepository.getChecklistByForestId(OpMode, ForestID);
+    }
+
+    public List<GetChecklistDto> getChecklistByLastNDays(int OpMode, int NDays){
+        return checklistRepository.getChecklistByLastNDays(OpMode, NDays);
+    }
+
+    public List<GetChecklistDto> getChecklistByVerificationStatus(int OpMode, int Verified){
+        return checklistRepository.getChecklistByVerificationStatus(OpMode, Verified);
+    }
 }

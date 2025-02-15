@@ -73,5 +73,21 @@ public interface ChecklistRepository extends JpaRepository<RootEntity, Long> {
             @Param("DriverID") Long DriverID
     );
 
+    @Query(value = "EXEC dbo.usp_Checklist @OpMode = :OpMode, @ForestID = :ForestID", nativeQuery = true)
+    List<GetChecklistDto> getChecklistByForestId(
+            @Param("OpMode") int OpMode,
+            @Param("ForestID") Long ForestID
+    );
 
+    @Query(value = "EXEC dbo.usp_Checklist @OpMode = :OpMode, @NDays = :NDays", nativeQuery = true)
+    List<GetChecklistDto> getChecklistByLastNDays(
+            @Param("OpMode") int OpMode,
+            @Param("NDays") int NDays
+    );
+
+    @Query(value = "EXEC dbo.usp_Checklist @OpMode = :OpMode, @Verified = :Verified", nativeQuery = true)
+    List<GetChecklistDto> getChecklistByVerificationStatus(
+            @Param("OpMode") int OpMode,
+            @Param("Verified") int Verified
+    );
 }

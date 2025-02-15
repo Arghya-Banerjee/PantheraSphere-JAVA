@@ -71,4 +71,22 @@ public class ChecklistController {
         );
         return ResponseEntity.ok("Checklist Updated Successfully !!");
     }
+
+    @GetMapping("/forest/{forestid}")
+    public ResponseEntity<List<GetChecklistDto>> getChecklistByForestId(@PathVariable Long forestid){
+        List<GetChecklistDto> checklists = checklistService.getChecklistByForestId(8, forestid);
+        return ResponseEntity.ok(checklists);
+    }
+
+    @GetMapping("/recent/{ndays}")
+    public ResponseEntity<List<GetChecklistDto>> getChecklistByLastNDays(@PathVariable int ndays){
+        List<GetChecklistDto> checklists = checklistService.getChecklistByLastNDays(9, ndays);
+        return ResponseEntity.ok(checklists);
+    }
+
+    @GetMapping("/status/{status}")
+    public ResponseEntity<List<GetChecklistDto>> getChecklistByVerificationStatus(@PathVariable int status){
+        List<GetChecklistDto> checklists = checklistService.getChecklistByVerificationStatus(10, status);
+        return ResponseEntity.ok(checklists);
+    }
 }

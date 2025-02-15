@@ -1,8 +1,6 @@
 package com.arghya.PantheraSphere.controller;
 
-import com.arghya.PantheraSphere.dto.AddChecklistDto;
-import com.arghya.PantheraSphere.dto.GetChecklistByUserDto;
-import com.arghya.PantheraSphere.dto.GetChecklistDto;
+import com.arghya.PantheraSphere.dto.*;
 import com.arghya.PantheraSphere.service.ChecklistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -88,5 +86,23 @@ public class ChecklistController {
     public ResponseEntity<List<GetChecklistDto>> getChecklistByVerificationStatus(@PathVariable int status){
         List<GetChecklistDto> checklists = checklistService.getChecklistByVerificationStatus(10, status);
         return ResponseEntity.ok(checklists);
+    }
+
+    @GetMapping("/top-contributors/{ntop}")
+    public ResponseEntity<List<ChecklistContributionsDto>> getChecklistNTopContributions(@PathVariable int ntop){
+        List<ChecklistContributionsDto> contributors = checklistService.getChecklistTopContributions(11, ntop);
+        return ResponseEntity.ok(contributors);
+    }
+
+    @GetMapping("/top-contributors")
+    public ResponseEntity<List<ChecklistContributionsDto>> getChecklistTopContributions(){
+        List<ChecklistContributionsDto> contributors = checklistService.getChecklistTopContributions(11, 5);
+        return ResponseEntity.ok(contributors);
+    }
+
+    @GetMapping("/summary")
+    public ResponseEntity<ChecklistSummaryDto> getChecklistSummary(){
+        ChecklistSummaryDto summary = checklistService.getChecklistSummary(12);
+        return ResponseEntity.ok(summary);
     }
 }

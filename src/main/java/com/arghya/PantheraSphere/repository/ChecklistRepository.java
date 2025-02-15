@@ -1,5 +1,7 @@
 package com.arghya.PantheraSphere.repository;
 
+import com.arghya.PantheraSphere.dto.ChecklistContributionsDto;
+import com.arghya.PantheraSphere.dto.ChecklistSummaryDto;
 import com.arghya.PantheraSphere.dto.GetChecklistByUserDto;
 import com.arghya.PantheraSphere.dto.GetChecklistDto;
 import com.arghya.PantheraSphere.model.RootEntity;
@@ -89,5 +91,16 @@ public interface ChecklistRepository extends JpaRepository<RootEntity, Long> {
     List<GetChecklistDto> getChecklistByVerificationStatus(
             @Param("OpMode") int OpMode,
             @Param("Verified") int Verified
+    );
+
+    @Query(value = "EXEC dbo.usp_Checklist @OpMode = :OpMode, @NTop = :NTop", nativeQuery = true)
+    List<ChecklistContributionsDto> getChecklistTopContributions(
+            @Param("OpMode") int OpMode,
+            @Param("NTop") int NTop
+    );
+
+    @Query(value = "EXEC dbo.usp_Checklist @OpMode = :OpMode", nativeQuery = true)
+    ChecklistSummaryDto getChecklistSummary(
+            @Param("OpMode") int OpMode
     );
 }

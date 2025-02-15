@@ -1,9 +1,12 @@
 package com.arghya.PantheraSphere.service;
 
+import com.arghya.PantheraSphere.dto.ChecklistContributionsDto;
+import com.arghya.PantheraSphere.dto.ChecklistSummaryDto;
 import com.arghya.PantheraSphere.dto.GetChecklistByUserDto;
 import com.arghya.PantheraSphere.dto.GetChecklistDto;
 import com.arghya.PantheraSphere.repository.ChecklistRepository;
 import jakarta.transaction.Transactional;
+import org.hibernate.annotations.Check;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,5 +59,13 @@ public class ChecklistService {
 
     public List<GetChecklistDto> getChecklistByVerificationStatus(int OpMode, int Verified){
         return checklistRepository.getChecklistByVerificationStatus(OpMode, Verified);
+    }
+
+    public List<ChecklistContributionsDto> getChecklistTopContributions(int OpMode, int NTop){
+        return checklistRepository.getChecklistTopContributions(OpMode, NTop);
+    }
+
+    public ChecklistSummaryDto getChecklistSummary(int OpMode){
+        return checklistRepository.getChecklistSummary(OpMode);
     }
 }

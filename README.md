@@ -56,8 +56,6 @@ This project is designed with a **controller-service-repository structure** in *
 
 ## 📂 Database Schema Overview
 
-![Screenshot 2025-02-14 131934](https://github.com/user-attachments/assets/c3e119eb-333c-4db1-95db-a0135d969ed1)
-
 | Table Name         | Description |
 |--------------------|------------|
 | **UserMaster**     | Stores user data (ID, name, email, role, etc.). |
@@ -70,6 +68,32 @@ This project is designed with a **controller-service-repository structure** in *
 | **CarMaster**      | Maintains records of safari vehicles. |
 | **ChecklistHeader** | Represents a checklist for safari observations. |
 | **ChecklistItem**  | Stores tiger sighting details linked to a checklist. |
+
+---
+
+## 🚀 API Endpoints
+
+| HTTP Method | Endpoint | Description |
+|------------|---------|-------------|
+| **GET**    | `/api/tigers` | Retrieves all tigers from the database. |
+| **GET**    | `/api/tigers/{id}` | Retrieves details of a specific tiger by ID. |
+| **POST**   | `/api/tigers` | Adds a new tiger record. |
+| **PUT**    | `/api/tigers/{id}` | Updates an existing tiger's information. |
+| **DELETE** | `/api/tigers/{id}` | Deletes a tiger record. |
+| **GET**    | `/api/forests` | Retrieves all registered forests. |
+| **GET**    | `/api/forests/{id}` | Fetches details of a specific forest by ID. |
+| **POST**   | `/api/forests` | Adds a new forest record. |
+| **PUT**    | `/api/forests/{id}` | Updates an existing forest. |
+| **DELETE** | `/api/forests/{id}` | Deletes a forest record. |
+| **GET**    | `/api/checklists` | Fetches all safari checklists. |
+| **POST**   | `/api/checklists` | Creates a new checklist for a safari. |
+| **PUT**    | `/api/checklists/{id}` | Updates an existing checklist. |
+| **DELETE** | `/api/checklists/{id}` | Removes a checklist from the system. |
+| **POST**   | `/api/auth/register` | Registers a new user. |
+| **POST**   | `/api/auth/login` | Logs in a user and returns a token. |
+| **GET**    | `/api/users/profile` | Retrieves the authenticated user's profile. |
+
+For detailed API documentation, visit **Swagger UI**: `http://localhost:8080/swagger-ui/index.html`
 
 ---
 
@@ -102,9 +126,6 @@ or
 ```bash
 java -jar target/PantheraSphere.jar
 ```
-
-### 5️⃣ API Documentation
-- **Swagger UI**: `http://localhost:8080/swagger-ui/index.html`
 
 ---
 

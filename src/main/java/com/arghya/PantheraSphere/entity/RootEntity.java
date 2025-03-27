@@ -1,6 +1,5 @@
-package com.arghya.PantheraSphere.model;
+package com.arghya.PantheraSphere.entity;
 
-import com.arghya.PantheraSphere.dto.RoleDto;
 import jakarta.persistence.*;
 
 @Entity

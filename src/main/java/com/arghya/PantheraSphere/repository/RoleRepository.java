@@ -1,7 +1,7 @@
 package com.arghya.PantheraSphere.repository;
 
 import com.arghya.PantheraSphere.dto.RoleDto;
-import com.arghya.PantheraSphere.model.RootEntity;
+import com.arghya.PantheraSphere.entity.RootEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

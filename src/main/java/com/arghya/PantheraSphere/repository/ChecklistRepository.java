@@ -1,7 +1,7 @@
 package com.arghya.PantheraSphere.repository;
 
 import com.arghya.PantheraSphere.dto.GetChecklistDto;
-import com.arghya.PantheraSphere.entity.RootEntity;
+import com.arghya.PantheraSphere.entity.ChecklistHeader;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -13,7 +13,7 @@ import java.sql.Time;
 import java.util.List;
 
 @Repository
-public interface ChecklistRepository extends JpaRepository<RootEntity, Long> {
+public interface ChecklistRepository extends JpaRepository<ChecklistHeader, Long> {
 
     @Query(value = "EXEC dbo.usp_Checklist @OpMode = :OpMode", nativeQuery = true)
     List<GetChecklistDto> getAllChecklist(

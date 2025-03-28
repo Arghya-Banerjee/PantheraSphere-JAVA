@@ -1,10 +1,12 @@
 package com.arghya.PantheraSphere.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
+@Data
 @Table(name = "CarMaster")
 public class CarMaster {
     @Id

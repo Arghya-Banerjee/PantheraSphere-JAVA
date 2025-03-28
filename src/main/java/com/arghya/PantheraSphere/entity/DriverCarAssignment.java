@@ -1,10 +1,12 @@
 package com.arghya.PantheraSphere.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Data
 @Table(name = "DriverCarAssignment")
 public class DriverCarAssignment {
     @Id

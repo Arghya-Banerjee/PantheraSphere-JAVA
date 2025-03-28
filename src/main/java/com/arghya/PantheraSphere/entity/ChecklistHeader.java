@@ -1,6 +1,7 @@
 package com.arghya.PantheraSphere.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,6 +9,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 @Entity
+@Data
 @Table(name = "ChecklistHeader")
 public class ChecklistHeader {
     @Id

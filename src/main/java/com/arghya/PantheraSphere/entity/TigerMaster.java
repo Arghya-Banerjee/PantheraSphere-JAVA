@@ -1,11 +1,13 @@
 package com.arghya.PantheraSphere.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Data
 @Table(name = "TigerMaster")
 public class TigerMaster {
     @Id
